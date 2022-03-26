@@ -150,14 +150,14 @@ if __name__ == "__main__":
     
     title = f"KMeans on unreduced {name} dataset"
     new_y = kmeans(X, y)
-    print(y, new_y)
+    print(np.sum(np.logical_not(np.logical_xor(y, new_y))))
     neural_net(X, new_y, "KMeans", name)
     
     print()
     
     title = f"Expectation Maximization on unreduced {name} dataset"
     new_y = em(X, y)
-    print(y, new_y)
+    print(np.sum(np.logical_not(np.logical_xor(y, new_y))))
     neural_net(X, new_y, "Expectation Maximization", name)
     
     
@@ -167,13 +167,13 @@ if __name__ == "__main__":
     
     title = f"KMeans on unreduced {name} dataset"
     new_y = kmeans(X, y)
-    print(y, new_y)
+    print(np.sum(np.logical_not(np.logical_xor(y, new_y))))
     
     print()
     
     title = f"Expectation Maximization on unreduced {name} dataset"
     new_y = em(X, y)
-    print(y, new_y)
+    print(np.sum(np.logical_not(np.logical_xor(y, new_y))))
     
     dimensions = ["PCA", "ICA", "Randomized Projection", "LDA"]
     
