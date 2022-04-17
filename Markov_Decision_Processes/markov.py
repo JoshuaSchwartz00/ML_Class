@@ -175,10 +175,10 @@ if __name__ == "__main__":
             finish_time = (datetime.now() - curr_time).total_seconds()
             q_times.append(finish_time)
             
-            if t == "Easy" and val_pol == pol_pol:
-                print("Easy Val == Pol:", discount)
-            elif t == "Hard" and val_pol != pol_pol:
-                print("Hard Val != Pol:", discount)
+            # if t == "Easy" and val_pol == pol_pol:
+            #     print("Easy Val == Pol:", discount)
+            # elif t == "Hard" and val_pol != pol_pol:
+            #     print("Hard Val != Pol:", discount)
                 
         graph_times(value_times, pol_times, q_times, discounts, t)
         graph_iters(value_iters, pol_iters, discounts, t)
@@ -190,11 +190,6 @@ if __name__ == "__main__":
         pol_iter, pol_pol, pol_rewards, pol_errors = policy(T, R, discount, max_iter, verbose=True)
         
         q_pol, q_rewards, q_errors, out = q_learning(T, R, discount, max_iter, verbose=True)
-        
-        print(val_pol)
-        print(pol_pol)
-        print(q_pol)
-        print(val_iter, pol_iter)
         
         graph_rewards(val_rewards, pol_rewards, q_rewards, out, t)
         graph_errors(val_errors, pol_errors, q_errors, out, t)
